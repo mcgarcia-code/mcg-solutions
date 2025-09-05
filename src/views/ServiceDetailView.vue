@@ -99,7 +99,7 @@ onMounted(() => {
     </section>
 
     <section class="py-5 bg-light">
-      <div class="container">
+      <div class="container gx-5">
         <div class="row align-items-center g-5">
           <div class="col-lg-6">
             <h2 class="fw-bold">¿Es este servicio ideal para ti?</h2>
@@ -122,12 +122,17 @@ onMounted(() => {
 </template>
 
 <style scoped>
+/* Si tu navbar es fixed-top y mide ~70px, esto evita que lo tape.
+   Si NO es fixed, puedes bajar a 0 este padding-top. */
 .service-detail-page {
   padding-top: 70px;
+  overflow-x: clip; /* seguridad contra scroll lateral */
 }
+
 .service-icon-color {
   color: var(--mcg-red) !important;
 }
+
 .service-hero {
   position: relative;
   background-size: cover;
@@ -136,7 +141,21 @@ onMounted(() => {
   min-height: 75vh;
   display: flex;
   align-items: center;
+
+  /* ⬇️ MÁS AIRE ARRIBA DEL CONTENIDO DEL HERO */
+  /* Usa la altura del navbar (70px por defecto) + notch iOS + margen extra */
+  padding-top: calc(var(--nav-h, 70px) + env(safe-area-inset-top) + 1.25rem);
+  padding-bottom: 2.5rem;
 }
+
+/* En pantallas grandes, un poco más de aire (opcional) */
+@media (min-width: 992px) {
+  .service-hero {
+    padding-top: calc(var(--nav-h, 70px) + 2rem);
+    padding-bottom: 3rem;
+  }
+}
+
 .service-hero .overlay {
   position: absolute;
   top: 0;
@@ -149,7 +168,13 @@ onMounted(() => {
 .service-hero .container {
   z-index: 2;
 }
-/* 2. CAMBIO AQUÍ: Se eliminó la transición y el efecto hover */
+
+/* Evita que el ícono (tipografía grande) se “recorte” por line-height */
+.service-hero .display-1 {
+  line-height: 1;
+}
+
+/* Imagen del detalle */
 .service-detail-image {
   max-width: 200px;
   display: block;
