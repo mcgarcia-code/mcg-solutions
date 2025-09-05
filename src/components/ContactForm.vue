@@ -77,7 +77,7 @@ const sendWhatsAppMessage = () => {
             </div>
 
             <div class="d-flex justify-content-start mt-4">
-              <button type="submit" class="btn btn-primary btn-lg">
+              <button type="submit" class="btn btn-primary">
                 <i class="bi bi-whatsapp me-2"></i> Enviar por WhatsApp
               </button>
             </div>
@@ -89,41 +89,35 @@ const sendWhatsAppMessage = () => {
 </template>
 
 <style scoped>
+/* Código CSS limpio y sin caracteres invisibles */
 .form-control:focus {
   border-color: var(--mcg-blue);
   box-shadow: 0 0 0 0.25rem rgba(33, 50, 93, 0.25);
 }
 
 .row.g-0 {
-  /* Aplica al contenedor del row */
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
   border-radius: 0.5rem;
   overflow: hidden;
 }
 
-/* Estilos para la nueva columna de contacto */
 .contact-info i {
   font-size: 1.5rem;
-  color: var(--mcg-red); /* Por defecto los íconos rojos */
+  color: var(--mcg-red);
 }
-
-/* Color específico para el ícono de WhatsApp en la columna de contacto */
-
 .contact-info span {
   font-size: 1.1rem;
 }
 
-/* Estilos para el botón de WhatsApp dentro del formulario */
-.btn-primary.btn-lg {
-  display: flex;
+/* Estilos ajustados para el botón de tamaño normal */
+.btn-primary {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem; /* Espacio entre el ícono y el texto */
-  font-size: 1rem; /* Asegura que el botón sea grande */
+  gap: 0.5rem;
 }
 
-.btn-primary.btn-lg i {
-  font-size: 1.25rem; /* Tamaño del ícono dentro del botón */
-  /* Aquí no necesitamos color específico, ya que el ícono hereda el color del texto del botón (blanco) */
+.btn-primary i {
+  font-size: 1.25rem;
 }
 </style>

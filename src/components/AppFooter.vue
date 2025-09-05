@@ -1,6 +1,5 @@
 <script setup>
 import { RouterLink } from 'vue-router'
-// 1. Cambiamos la extensión del archivo a .png
 import logoWhite from '@/assets/images/logo-white.png'
 </script>
 
@@ -21,6 +20,9 @@ import logoWhite from '@/assets/images/logo-white.png'
         <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
           <h5 class="text-uppercase mb-4 fw-bold">Links</h5>
           <ul class="list-unstyled">
+            <li class="mb-2">
+              <a href="/#services" class="footer-link">Servicios</a>
+            </li>
             <li class="mb-2">
               <a href="/#nosotros" class="footer-link">Nosotros</a>
             </li>
@@ -71,7 +73,7 @@ import logoWhite from '@/assets/images/logo-white.png'
             <a href="https://wa.me/5491149380486" class="social-icon"
               ><i class="bi bi-whatsapp"></i
             ></a>
-            <a href="www.linkedin.com/in/mariana-celeste-garcia" class="social-icon"
+            <a href="https://www.linkedin.com/in/mariana-celeste-garcia" class="social-icon"
               ><i class="bi bi-linkedin"></i
             ></a>
             <a href="https://github.com/mcgarcia-code" class="social-icon"
@@ -85,8 +87,8 @@ import logoWhite from '@/assets/images/logo-white.png'
 </template>
 
 <style scoped>
+/* Código CSS limpio y sin caracteres invisibles */
 .footer-logo {
-  /* 3. Aumentamos el tamaño del logo */
   height: 70px;
 }
 

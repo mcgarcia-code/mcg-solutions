@@ -14,10 +14,10 @@ import ContactForm from '@/components/ContactForm.vue'
       <div class="container position-relative">
         <div class="hero-content">
           <h1 class="display-3 text-white fw-bold">Soluciones Digitales que Impulsan tu Negocio</h1>
-          <p class="lead text-white my-4">
+          <p class="lead text-white fw-bold my-4">
             Creamos sitios web rápidos, modernos y optimizados para que destaques en internet.
           </p>
-          <a href="#services" class="btn btn-primary btn-lg">Nuestros Servicios</a>
+          <a href="#services" class="btn btn-primary btn-lg">Descubre Nuestros Servicios</a>
         </div>
         <div class="scroll-down-indicator">
           <a href="#services" aria-label="Ir a la siguiente sección">
@@ -128,7 +128,7 @@ import ContactForm from '@/components/ContactForm.vue'
               <i class="bi bi-rocket-takeoff"></i>
             </div>
             <h3 class="fw-bold h4">Tecnología de Vanguardia</h3>
-            <p class="text-white">
+            <p class="text-white-50">
               Utilizamos Vue.js para crear SPAs que ofrecen una velocidad y fluidez imposibles de
               lograr con sitios tradicionales.
             </p>
@@ -138,7 +138,7 @@ import ContactForm from '@/components/ContactForm.vue'
               <i class="bi bi-palette-fill"></i>
             </div>
             <h3 class="fw-bold h4">Diseño Centrado en el Usuario</h3>
-            <p class="text-white">
+            <p class="text-white-50">
               Diseñamos experiencias intuitivas que guían al usuario y cumplen los objetivos de tu
               negocio.
             </p>
@@ -146,7 +146,7 @@ import ContactForm from '@/components/ContactForm.vue'
           <div class="col-lg-4 text-center">
             <div class="feature-icon-container text-white mb-3"><i class="bi bi-headset"></i></div>
             <h3 class="fw-bold h4">Soporte Integral y Continuo</h3>
-            <p class="text-white">
+            <p class="text-white-50">
               Nuestra relación no termina con el lanzamiento. Ofrecemos mantenimiento para que tu
               proyecto crezca y se mantenga a punto.
             </p>
@@ -160,10 +160,10 @@ import ContactForm from '@/components/ContactForm.vue'
 </template>
 
 <style scoped>
+/* Código CSS limpio y sin caracteres invisibles */
 section[id] {
   scroll-margin-top: 70px;
 }
-/* Estilos del Hero */
 .hero-section {
   padding-top: 120px;
   min-height: 100vh;
@@ -187,7 +187,7 @@ section[id] {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(45deg, rgba(13, 27, 42, 0.45), rgba(0, 0, 0, 0.9));
+  background: linear-gradient(45deg, rgba(13, 27, 42, 0.85), rgba(0, 0, 0, 0.9));
   z-index: 1;
 }
 .hero-section .container {
@@ -225,13 +225,11 @@ section[id] {
   animation: bounce 2.5s infinite;
 }
 
-/* Estilos de Padding de Servicios */
 #services {
   padding-top: 6rem;
   padding-bottom: 6rem;
 }
 
-/* Estilos de Paneles de Servicio */
 .service-panel {
   background-color: #ffffff;
   border-left: 5px solid var(--mcg-blue);
@@ -265,7 +263,6 @@ section[id] {
   color: var(--mcg-blue);
 }
 
-/* Estilos "Nosotros" */
 .nosotros-section {
   position: relative;
   background-size: cover;
@@ -278,7 +275,7 @@ section[id] {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(45deg, rgba(13, 27, 42, 0.4), rgba(0, 0, 0, 0.9));
+  background: linear-gradient(45deg, rgba(13, 27, 42, 0.85), rgba(0, 0, 0, 0.9));
   z-index: 1;
 }
 .nosotros-section .container {
@@ -292,7 +289,6 @@ section[id] {
   height: 80px;
   border-radius: 50%;
   font-size: 2.5rem;
-  /* ===== CAMBIO DE COLOR AQUÍ ===== */
-  background-color: var(--mcg-red); /* Se establece el color de fondo rojo */
+  background-color: var(--mcg-red);
 }
 </style>

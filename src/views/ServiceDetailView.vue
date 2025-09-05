@@ -3,10 +3,8 @@ import { ref, watch, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
 import ContactForm from '../components/ContactForm.vue'
 import serviceImage from '@/assets/images/ServiceDetail.png'
-// 1. Se importa la imagen de fondo del hero
 import heroBg from '@/assets/images/hero-background.webp'
 
-// El resto del script no cambia
 const servicesData = {
   'one-page': {
     title: 'Sitios One Page',
@@ -91,12 +89,12 @@ onMounted(() => {
 
 <template>
   <div class="service-detail-page">
-    <section class="service-hero py-5" :style="{ backgroundImage: `url(${heroBg})` }">
+    <section class="service-hero" :style="{ backgroundImage: `url(${heroBg})` }">
       <div class="overlay"></div>
       <div class="container text-center position-relative">
         <i class="display-1 mb-3 service-icon-color" :class="[service.icon]"></i>
         <h1 class="display-4 fw-bold text-white">{{ service.title }}</h1>
-        <p class="lead text-white-dark col-lg-8 mx-auto">{{ service.description }}</p>
+        <p class="lead text-white col-lg-8 mx-auto">{{ service.description }}</p>
       </div>
     </section>
 
@@ -124,24 +122,20 @@ onMounted(() => {
 </template>
 
 <style scoped>
-/* Código CSS limpio y sin caracteres invisibles */
 .service-detail-page {
   padding-top: 70px;
 }
-
 .service-icon-color {
   color: var(--mcg-red) !important;
 }
-
-/* --- ESTILOS PARA EL NUEVO ENCABEZADO DE SERVICIO --- */
 .service-hero {
   position: relative;
   background-size: cover;
   background-position: center;
   color: #fff;
-  min-height: 40vh; /* Establece la misma altura mínima */
+  min-height: 75vh;
   display: flex;
-  align-items: center; /* Centra el contenido verticalmente */
+  align-items: center;
 }
 .service-hero .overlay {
   position: absolute;
@@ -149,20 +143,16 @@ onMounted(() => {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(45deg, rgba(13, 27, 42, 0.45), rgba(0, 0, 0, 0.9));
+  background: linear-gradient(45deg, rgba(13, 27, 42, 0.85), rgba(0, 0, 0, 0.9));
   z-index: 1;
 }
 .service-hero .container {
-  z-index: 2; /* Para que el contenido esté sobre el overlay */
+  z-index: 2;
 }
-
-/* Estilos para la imagen del detalle */
+/* 2. CAMBIO AQUÍ: Se eliminó la transición y el efecto hover */
 .service-detail-image {
-  max-width: 300px;
+  max-width: 200px;
   display: block;
   margin: auto;
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
 }
 </style>

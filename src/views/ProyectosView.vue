@@ -67,40 +67,43 @@ const setFilter = (category) => {
 
 <template>
   <div class="proyectos-page">
-    <section class="proyectos-hero py-5 text-center" :style="{ backgroundImage: `url(${heroBg})` }">
+    <section class="proyectos-hero" :style="{ backgroundImage: `url(${heroBg})` }">
       <div class="overlay"></div>
       <div class="container position-relative">
         <h1 class="display-4 fw-bold text-white">Nuestro Trabajo</h1>
-        <p class="lead text-dark-50">
+        <p class="lead text-white">
           Explora algunos de los proyectos que hemos transformado en soluciones digitales exitosas.
         </p>
       </div>
     </section>
 
     <div class="container py-5">
-      <div class="row mb-5">
-        <div class="col text-center">
-          <button
-            v-for="category in categories"
-            :key="category"
-            @click="setFilter(category)"
-            class="btn btn-outline-dark mx-1 mb-2"
-            :class="{ 'active-filter': activeFilter === category }"
-          >
-            {{ category }}
-          </button>
-        </div>
-      </div>
-
-      <div class="row g-4">
-        <div v-for="proyecto in filteredProjects" :key="proyecto.id" class="col-lg-4 col-md-6">
-          <div class="project-card shadow-sm">
-            <img :src="proyecto.image" class="img-fluid" :alt="proyecto.title" />
-            <div class="card-overlay">
-              <div class="overlay-content">
-                <h5 class="text-white fw-bold">{{ proyecto.title }}</h5>
-                <p class="text-white-50">{{ proyecto.category }}</p>
-                <a href="#" class="btn btn-sm btn-primary">Ver Detalles</a>
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="row mb-5">
+            <div class="col text-center">
+              <button
+                v-for="category in categories"
+                :key="category"
+                @click="setFilter(category)"
+                class="btn btn-outline-dark mx-1 mb-2"
+                :class="{ 'active-filter': activeFilter === category }"
+              >
+                {{ category }}
+              </button>
+            </div>
+          </div>
+          <div class="row g-4">
+            <div v-for="proyecto in filteredProjects" :key="proyecto.id" class="col-lg-4 col-md-6">
+              <div class="project-card shadow-sm">
+                <img :src="proyecto.image" class="img-fluid" :alt="proyecto.title" />
+                <div class="card-overlay">
+                  <div class="overlay-content">
+                    <h5 class="text-white fw-bold">{{ proyecto.title }}</h5>
+                    <p class="text-white-50">{{ proyecto.category }}</p>
+                    <a href="#" class="btn btn-sm btn-primary">Ver Detalles</a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -129,9 +132,10 @@ const setFilter = (category) => {
   background-size: cover;
   background-position: center;
   color: #fff;
-  min-height: 62vh; /* Establece una altura mínima (40% de la altura de la ventana) */
+  min-height: 75vh;
   display: flex;
-  align-items: center; /* Centra el contenido verticalmente */
+  align-items: center;
+  text-align: center;
 }
 .proyectos-hero .overlay {
   position: absolute;
@@ -139,7 +143,7 @@ const setFilter = (category) => {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(45deg, rgba(13, 27, 42, 0.45), rgba(0, 0, 0, 0.9));
+  background: linear-gradient(45deg, rgba(13, 27, 42, 0.85), rgba(0, 0, 0, 0.9));
   z-index: 1;
 }
 .proyectos-hero .container {

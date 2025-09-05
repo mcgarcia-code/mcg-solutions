@@ -3,31 +3,25 @@ import { ref, onMounted, onBeforeUnmount } from 'vue'
 import { RouterLink } from 'vue-router'
 import logo from '@/assets/images/logo.svg'
 
-// --- LÓGICA PARA EL CAMBIO DE COLOR CON SCROLL ---
+// Lógica para el cambio de color con scroll
 const scrolledNav = ref(false)
 const updateScroll = () => {
   scrolledNav.value = window.scrollY > 50
 }
 
-// --- LÓGICA PARA EL MENÚ MÓVIL (CORREGIDA) ---
+// Lógica para el menú móvil
 const navbarToggler = ref(null)
 const navbarNav = ref(null)
-
-// 1. La función ahora recibe el objeto 'event' para saber qué elemento se clickeó
 const closeMenuOnClick = (event) => {
-  // 2. Si el elemento clickeado es el que despliega el sub-menú, no hacemos nada.
-  // Esto permite que Bootstrap haga su trabajo de abrir el desplegable.
   if (event.target.classList.contains('dropdown-toggle')) {
     return
   }
-
-  // 3. Si el clic fue en cualquier otro enlace, cerramos el menú principal.
   if (navbarNav.value && navbarNav.value.classList.contains('show')) {
     navbarToggler.value.click()
   }
 }
 
-// --- CICLOS DE VIDA (ONMOUNTED/ONBEFOREUNMOUNT) ---
+// Ciclos de vida
 onMounted(() => {
   window.addEventListener('scroll', updateScroll)
 })
@@ -47,7 +41,7 @@ onBeforeUnmount(() => {
     >
       <div class="container">
         <RouterLink class="navbar-brand" to="/">
-          <img :src="logo" alt="MCG Solutions Logo" width="90" />
+          <img :src="logo" alt="MCG Solutions Logo" width="120" />
         </RouterLink>
 
         <button
@@ -133,8 +127,7 @@ onBeforeUnmount(() => {
 </template>
 
 <style scoped>
-/* (No hay cambios en los estilos, son los mismos de antes) */
-/* Estilos para la transición y colores del navbar dinámico */
+/* Código CSS limpio y sin caracteres invisibles */
 .navbar {
   transition: background-color 0.4s ease-in-out;
 }
@@ -142,12 +135,16 @@ onBeforeUnmount(() => {
   font-weight: 600;
   transition: color 0.3s ease-in-out;
 }
+
+/* Colores de enlaces en modo claro (navbar blanco) */
 .navbar-light .nav-link {
   color: #343a40;
 }
 .navbar-light .nav-link.router-link-active.router-link-exact-active {
   color: var(--mcg-blue) !important;
 }
+
+/* Colores de enlaces en modo oscuro (navbar oscuro) */
 .navbar-dark .nav-link {
   color: rgba(255, 255, 255, 0.75);
 }
@@ -155,17 +152,13 @@ onBeforeUnmount(() => {
   color: #ffffff !important;
 }
 
-/* --- EFECTO HOVER MODIFICADO --- */
+/* Efecto hover unificado para todos los enlaces */
 .nav-link:hover {
   color: var(--mcg-red) !important;
 }
 .dropdown-item:hover {
   color: var(--mcg-red);
-  background-color: rgba(0, 0, 0, 0.04);
-}
-.dropdown-menu-dark .dropdown-item:hover {
-  color: var(--mcg-red);
-  background-color: rgba(255, 255, 255, 0.08);
+  background-color: transparent; /* Fondo transparente para que el color de texto sea el protagonista */
 }
 
 /* Estilos del dropdown */
@@ -183,6 +176,11 @@ onBeforeUnmount(() => {
 .dropdown-menu-dark .dropdown-item:active {
   background-color: #343a40;
 }
+.dropdown-menu-dark {
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Estilos del botón hamburguesa */
 .navbar-toggler {
   border: 2px solid var(--mcg-red) !important;
   padding: 0.25rem 0.5rem;
@@ -194,6 +192,8 @@ onBeforeUnmount(() => {
   color: var(--mcg-red);
   font-size: 2rem;
 }
+
+/* Estilos para el menú en móviles */
 @media (max-width: 991.98px) {
   .navbar-nav .nav-link,
   .navbar-nav .dropdown-toggle {
@@ -209,11 +209,8 @@ onBeforeUnmount(() => {
     color: rgba(255, 255, 255, 0.75);
   }
   .navbar-dark .dropdown-item:hover {
-    background-color: #343a40;
-    color: #fff;
-  }
-  .navbar-light .dropdown-item:hover {
-    background-color: #eee;
+    color: var(--mcg-red);
+    background-color: transparent;
   }
 }
 </style>
