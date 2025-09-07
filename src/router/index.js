@@ -26,8 +26,18 @@ const router = createRouter({
   history: createWebHistory(),
   routes,
   // Sube al principio de la página cada vez que se cambia de ruta
-  scrollBehavior(_to, _from, _savedPosition) {
-    return { top: 0 }
+  scrollBehavior(to, _from, _savedPosition) {
+    // Si la ruta a la que vamos tiene un "hash" (ej: /#contacto)...
+    if (to.hash) {
+      // ...nos desplazamos a ese elemento con un efecto suave.
+      return {
+        el: to.hash,
+        behavior: 'smooth',
+      }
+    } else {
+      // Si no, es un cambio de página normal, así que vamos al principio.
+      return { top: 0, behavior: 'smooth' }
+    }
   },
 })
 

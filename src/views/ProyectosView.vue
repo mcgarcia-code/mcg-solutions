@@ -37,14 +37,16 @@ const proyectos = ref([
     description: 'Portafolio digital minimalista para un fotógrafo profesional.',
     link: '#', // Reemplaza # con la URL real
   },
+  */
   {
     id: 5,
-    title: 'E-commerce de Vinos',
+    title: 'E-commerce de Iphone',
     category: 'E-commerce',
-    image: new URL('../assets/images/proyecto-5.webp', import.meta.url).href,
-    description: 'Tienda online elegante para una bodega de vinos boutique.',
-    link: '#', // Reemplaza # con la URL real
+    image: new URL('../assets/images/iphone.png', import.meta.url).href,
+    description: 'Tienda online de productos Apple.',
+    link: 'https://istore-drab.vercel.app/', // Reemplaza # con la URL real
   },
+  /*
   {
     id: 6,
     title: 'Sitio Web para Estudio de Abogados',
@@ -129,7 +131,7 @@ const setFilter = (category) => {
       <div class="container">
         <h2 class="fw-bold">¿Te gusta lo que ves?</h2>
         <p class="lead text-muted mb-4">Hagamos que tu proyecto sea el próximo caso de éxito.</p>
-        <a href="/#contacto" class="btn btn-primary btn-lg">Contáctanos</a>
+        <router-link to="/#contacto" class="btn btn-primary btn-lg">Contáctanos</router-link>
       </div>
     </section>
   </div>

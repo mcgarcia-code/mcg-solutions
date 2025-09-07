@@ -104,7 +104,9 @@ onMounted(() => {
           <div class="col-lg-6">
             <h2 class="fw-bold">¿Es este servicio ideal para ti?</h2>
             <p>{{ service.idealFor }}</p>
-            <a href="/#contacto" class="btn btn-primary btn-lg mt-3">Solicitar Presupuesto</a>
+            <a href="#seccion-contacto" class="btn btn-primary btn-lg mt-3"
+              >Solicitar Presupuesto</a
+            >
           </div>
           <div class="col-lg-6">
             <img
@@ -117,7 +119,7 @@ onMounted(() => {
       </div>
     </section>
 
-    <ContactForm />
+    <ContactForm id="seccion-contacto" />
   </div>
 </template>
 

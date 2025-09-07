@@ -111,13 +111,13 @@ onBeforeUnmount(() => {
               </ul>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/#nosotros">Nosotros</a>
+              <router-link class="nav-link" to="/#nosotros">Nosotros</router-link>
             </li>
             <li class="nav-item">
               <RouterLink class="nav-link" to="/proyectos">Proyectos</RouterLink>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/#contacto">Contacto</a>
+              <router-link class="nav-link" to="/#contacto">Contacto</router-link>
             </li>
           </ul>
         </div>
